@@ -85,6 +85,7 @@ export default {
       requestOptions
     );
     this.productlist = await data.json();
+     console.log("data||", this.productlist);
   },
 };
 </script>

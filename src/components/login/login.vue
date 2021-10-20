@@ -55,7 +55,7 @@ export default {
             localStorage.setItem("", JSON.stringify([]));
             if (!this.passwordErrMsg && !this.emailErrMsg) {
                 localStorage.setItem('user',this.email)
-                this.$router.push({ name: "home" });
+                this.$router.push({ name: "navigation" });
             } else {
                 alert("login failed");
             }
