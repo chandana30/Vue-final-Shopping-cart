@@ -28,10 +28,6 @@ export default {
       productlist: [],
     }
   },
-  mounted() {
-  },
-  activated() {
-  },
   components: {
     Addcart
   },
