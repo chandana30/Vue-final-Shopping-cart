@@ -33,6 +33,7 @@ export default {
     data() {
         return {
             itemdetails: "",
+            cart:[],
         };
     },
     created() {
@@ -40,7 +41,6 @@ export default {
         this.itemdetails = this.$route.params.details
             ? JSON.parse(this.$route.params.details)
             : null;
-           
     },
     methods: {
         isincart(cartid) {
@@ -66,6 +66,7 @@ export default {
       const cartthings = JSON.parse(localStorage.getItem("cart"));
       cartthings.push({ "id": thing, "title": thingname, "image": thingimage, "price": thingprice, "total": thingprice, "quantity": thingquant });
       localStorage.setItem("cart", JSON.stringify(cartthings));
+       this.cart = JSON.parse(localStorage.getItem("cart"));
         },
     },
 }
