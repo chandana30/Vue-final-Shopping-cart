@@ -42,7 +42,7 @@ export default {
         this.itemdetails = this.$route.params.details
             ? JSON.parse(this.$route.params.details)
             : null;
-            this.items = Object.freeze(this.productlist);
+            this.item = Object.freeze(this.productlist);
     },
     methods: {
         isincart(cartid) {
