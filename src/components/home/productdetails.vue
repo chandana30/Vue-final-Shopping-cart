@@ -65,6 +65,7 @@ export default {
       const cartthings = JSON.parse(localStorage.getItem("cart"));
       cartthings.push({ "id": thing, "title": thingname, "image": thingimage, "price": thingprice, "total": thingprice, "quantity": thingquant });
       localStorage.setItem("cart", JSON.stringify(cartthings));
+      this.itemdetails = JSON.parse(localStorage.getItem("cart"));
         },
     },
 }
