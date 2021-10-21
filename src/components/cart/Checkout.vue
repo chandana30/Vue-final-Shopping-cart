@@ -41,12 +41,13 @@
 
             <hr />
 
-            <button type="submit" class="place" @click="Details(name, address, mobile)">Place Order</button>
+            <button type="submit" class="place" @click="Details(name)">Place Order</button>
         </div>
     </div>
 </template>
 
 <script>
+import swal from 'sweetalert';
 export default {
     data() {
         return {
@@ -56,8 +57,8 @@ export default {
         }
     },
     methods: {
-        Details(name, address, mobile) {
-            alert("Thank you " + name + " Your order will deliver to this address " + address + " we will contact you to this number " + mobile + " Have a good day ");
+        Details(name) {
+            swal("Thank you for Shopping", "Your Order is placed Successfully to "+name, "success");
             this.$router.push({ name: "home" })
         }
     },

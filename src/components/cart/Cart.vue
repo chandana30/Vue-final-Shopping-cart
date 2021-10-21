@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import swal from 'sweetalert';
 export default {
     data() {
         return {
@@ -78,11 +79,27 @@ export default {
             }
         },
         removeitem(itemId) {
-            const cartItems = JSON.parse(localStorage.getItem("cart"));
-            const index = cartItems.findIndex(({ id }) => id === itemId);
-            cartItems.splice(index, 1);
-            localStorage.setItem("cart", JSON.stringify(cartItems));
-            this.itemdetails = JSON.parse(localStorage.getItem("cart"));
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, It will remove from your cart",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Your product has been removed!", {
+                            icon: "success",
+                        });
+                        const cartItems = JSON.parse(localStorage.getItem("cart"));
+                        const index = cartItems.findIndex(({ id }) => id === itemId);
+                        cartItems.splice(index, 1);
+                        localStorage.setItem("cart", JSON.stringify(cartItems));
+                        this.itemdetails = JSON.parse(localStorage.getItem("cart"));
+                    } else {
+                        swal("Your Product is safe in cart!");
+                    }
+                });
         }
     },
 }
@@ -120,7 +137,6 @@ img {
 .sub {
     background-color: black;
     color: white;
-
 }
 * {
     box-sizing: border-box;

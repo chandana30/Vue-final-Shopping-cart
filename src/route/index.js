@@ -14,7 +14,7 @@ const routes = [
 
   {
     path: "/",
-    redirect: "/navigation",
+    redirect: "/home",
   },
   { path: "/:pathMatch(.*)*", component: Navigation },
   {
