@@ -18,10 +18,11 @@
             {{ itemdetails.rating.rate }}
         </p>
         <br />
-        <div>
-            <button  v-if="isincart(itemdetails.id)" class="g-btn" @click="this.$router.push({ name: 'mycart' })">Goto Cart</button>
-
-            <button v-else class="a-btn" @click="addtocart(itemdetails)">Add to Cart</button>
+        <div v-if="isincart(itemdetails.id)">
+            <button class="g-btn" @click="this.$router.push({ name: 'mycart' })">Goto Cart</button>
+        </div>
+        <div v-else>
+            <button class="a-btn" @click="addtocart(itemdetails)">Add to Cart</button>
         </div>
     </div>
 </template>
