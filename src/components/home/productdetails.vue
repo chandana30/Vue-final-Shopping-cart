@@ -33,8 +33,6 @@ export default {
     data() {
         return {
             itemdetails: "",
-            cart:[],
-            item:[]
         };
     },
     created() {
@@ -42,7 +40,6 @@ export default {
         this.itemdetails = this.$route.params.details
             ? JSON.parse(this.$route.params.details)
             : null;
-            
     },
     methods: {
         isincart(cartid) {
