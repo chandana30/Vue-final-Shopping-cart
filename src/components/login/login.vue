@@ -52,7 +52,6 @@ export default {
     },
     methods: {
         loginFun() {
-            localStorage.setItem("", JSON.stringify([]));
             if (!this.passwordErrMsg && !this.emailErrMsg) {
                 localStorage.setItem('user',this.email)
                 this.$router.push({ name: "navigation" });

@@ -9,7 +9,7 @@
                 {{ itemdetails.description }}
             </p>
             <p id="price" style="width:20%; padding:60px;">
-                <b>Price is </b>
+                <b>Price is</b>
                 ₹ {{ itemdetails.price }}
             </p>
         </div>
@@ -18,11 +18,10 @@
             {{ itemdetails.rating.rate }}
         </p>
         <br />
-        <div v-if="isincart(itemdetails.id)">
-            <button class="g-btn" @click="this.$router.push({ name: 'mycart' })">Goto Cart</button>
-        </div>
-        <div v-else>
-            <button class="a-btn" @click="addtocart(itemdetails)">Add to Cart</button>
+        <div >
+            <button class="g-btn" v-if="isincart(itemdetails.id)" @click="this.$router.push({ name: 'mycart' })">Goto Cart</button>
+        
+            <button v-else class="a-btn" @click="addtocart(itemdetails)">Add to Cart</button>
         </div>
     </div>
 </template>
@@ -57,13 +56,16 @@ export default {
             const thingname = item.title;
             const thingimage = item.image;
             const thingprice = item.price;
+            const thingquant = 1;
 
             if (!(localStorage.getItem("cart"))) {
                 localStorage.setItem("cart", JSON.stringify([]));
             }
             const cartthings = JSON.parse(localStorage.getItem("cart"));
-            cartthings.push({ "id": thing, "title": thingname, "image": thingimage, "price": thingprice });
-            localStorage.setItem("cart", JSON.stringify(cartthings))
+            cartthings.push({ "id": thing, "title": thingname, "image": thingimage, "price": thingprice, "total": thingprice, "quantity": thingquant });
+            localStorage.setItem("cart", JSON.stringify(cartthings));
+            this.itemdetails = JSON.parse(localStorage.getItem("cart"));
+
         },
     },
 }
