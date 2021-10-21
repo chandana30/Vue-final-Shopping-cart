@@ -18,12 +18,12 @@
             {{ itemdetails.rating.rate }}
         </p>
         <br />
-        <div v-if="isincart(itemdetails.id)">
-            <button class="g-btn" @click="this.$router.push({ name: 'mycart' })">Goto Cart</button>
-        </div>
-        <div v-else>
-            <button class="a-btn" @click="addtocart(itemdetails)">Add to Cart</button>
-        </div>
+    
+            <button v-if="isincart(itemdetails.id)" class="g-btn" @click="this.$router.push({ name: 'mycart' })">Goto Cart</button>
+
+       
+            <button v-else class="a-btn" @click="addtocart(itemdetails)">Add to Cart</button>
+
     </div>
 </template>
 
@@ -66,7 +66,7 @@ export default {
       const cartthings = JSON.parse(localStorage.getItem("cart"));
       cartthings.push({ "id": thing, "title": thingname, "image": thingimage, "price": thingprice, "total": thingprice, "quantity": thingquant });
       localStorage.setItem("cart", JSON.stringify(cartthings));
-      this.cart = JSON.parse(localStorage.getItem("cart"));
+       this.cart = JSON.parse(localStorage.getItem("cart"));
         },
     },
 }
