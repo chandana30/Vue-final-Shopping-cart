@@ -11,7 +11,7 @@
                     <b>Password</b>
                 </label>
                 <input v-model="password" type="password" placeholder="Enter Password" name="psw" required/>
-                <p class="errMsg" v-if="passwordErrMsg">Password length should be between 8 to 16 characters</p>
+                <p class="errMsg" v-if="passwordErrMsg">Password length should be more than 8 characters</p>
 
                 <button @click="loginFun">Login</button>
             </div>
@@ -65,16 +65,11 @@ export default {
 
 <style scoped>
 
-.box {
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-    border: 3px solid #f1f1f1;
-    background-color: #a4a4c1;
-    border-radius: 20px;
-      height: auto;
-}
+
+
 p{
 margin: 0;
-padding-bottom: 20px;
+padding-bottom: 40px;
 color: rgb(168, 71, 71)
 }
 
@@ -88,12 +83,14 @@ input[type="password"] {
     display: inline-block;
     border: none;
     outline: none;
-    border-bottom: 2px solid #3b3b5e;
+    border-bottom: 2px solid white;
     box-sizing: border-box;
 }
-
+h1{
+    text-align: center;
+}
 button {
-    background-color: #ffdb4d;
+    background-color: gray;
     color: black;
     padding: 14px 20px;
     margin: 8px 0;
@@ -108,7 +105,8 @@ button:hover {
 }
 
 .container {
-    padding: 16px;
+    padding: 60px;
+    
 }
 .errmsg {
     color: red;

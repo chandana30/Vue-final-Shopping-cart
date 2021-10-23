@@ -31,7 +31,7 @@
                 ₹ {{ finalPrice }}
             </p>
         </div>
-        <button class="chk-btn" @click="this.$router.push({ name: 'delivery' })">Checkout</button>
+        <button class="chk-btn" @click="this.$router.push({ name: 'delivery' })">Order</button>
     </div>
 </template>
 

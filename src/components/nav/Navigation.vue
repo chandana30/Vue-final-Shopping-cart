@@ -1,8 +1,8 @@
 <template>
     <div class="main">
         <div id="nav">
-<button @click="this.$router.push({ name: 'home' })">Home</button> |
-<button @click="this.$router.push({ name: 'mycart' })">Cart</button>
+<button @click="this.$router.push({ name: 'home' })">Home</button> ||
+<button @click="this.$router.push({ name: 'mycart' })">MyCart</button>
         </div>
          <router-view />
     </div>
@@ -21,15 +21,20 @@ data() {
 
 <style  scoped>
 #nav{
-    text-align: center;
+    text-align: none;
+    
 }
+main{
+    color:black;
+}
+
 button{
-    background-color:rgb(20, 17, 17);
+    background-color:springgreen;
     border: none;
-    color: white;
+    color: black;
     padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;

@@ -93,8 +93,8 @@ export default {
 <style scoped>
 .column {
   float: left;
-  width: 15%;
-  margin-bottom: 40px;
+  width: 23%;
+  margin-bottom: 50px;
   padding: 0 10px;
 }
 
@@ -102,7 +102,7 @@ export default {
   .column {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -110,10 +110,13 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: wheat;
 }
 img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
+}
+h1{
+  text-align: center;
 }
 </style>
